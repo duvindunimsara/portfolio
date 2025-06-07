@@ -178,18 +178,87 @@ nav.scrolled {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: center; /* Center content */
+    gap: 4rem;
     padding: 0 2rem;
+    text-align: center;
     position: relative;
-}
-
-.hero-content {
-    max-width: 800px;
+    flex-wrap: wrap; /* Responsive */
+  }
+  
+  .hero-image {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  /* Radiant ring effect */
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147,51,234,0.4) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(8px);
+  }
+  
+  .hero-image:hover::before {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  /* Image Styling */
+  .hero-image img {
+    width: max-content;
+    height: max-content;
+    object-fit: cover;
     z-index: 2;
-}
+    position: relative;
+    animation: imageEntrance 2.5s ease forwards, imageFloat 6s ease-in-out infinite;
+  }
+  
+  /* Entrance Animation */
+  @keyframes imageEntrance {
+    0% {
+      opacity: 0;
+      transform: scale(0.6) rotate(-10deg);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.05) rotate(3deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  /* Floating Animation */
+  @keyframes imageFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  
+  .hero-content {
+    max-width: 600px;
+    z-index: 2;
+  }
+  
 
 .hero h1 {
+
     font-size: 4rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #ffffff, #3b82f6, #9333ea);
