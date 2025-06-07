@@ -174,20 +174,18 @@ nav.scrolled {
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center content */
     gap: 4rem;
     padding: 0 2rem;
     text-align: center;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Responsive */
   }
   
-  /* Hero Image Container */
   .hero-image {
     position: relative;
     display: inline-block;
@@ -217,14 +215,14 @@ nav.scrolled {
     transform: scale(1.05);
   }
   
-  /* Image Styling - Responsive */
+  /* Image Styling */
   .hero-image img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    max-height: 700px;
+    width: 500px; /* Fixed width for larger screens */
+    height: max-content;
     object-fit: cover;
-    border-radius: 50%;
+    
+    max-width: 700px; /* Limit width for responsiveness */
+    max-height: 700px; /* Limit height for responsiveness */
     z-index: 2;
     position: relative;
     animation: imageEntrance 2.5s ease forwards, imageFloat 6s ease-in-out infinite;
@@ -255,12 +253,15 @@ nav.scrolled {
     }
   }
   
+  
   .hero-content {
     max-width: 600px;
     z-index: 2;
   }
   
-  .hero h1 {
+
+.hero h1 {
+
     font-size: 4rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #ffffff, #3b82f6, #9333ea);
@@ -268,76 +269,22 @@ nav.scrolled {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fadeInUp 1s ease;
-  }
-  
-  .hero h2 {
+}
+
+.hero h2 {
     font-size: 1.5rem;
     color: #94a3b8;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease 0.2s both;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #cbd5e1;
     margin-bottom: 3rem;
     animation: fadeInUp 1s ease 0.4s both;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    animation: fadeInUp 1s ease 0.6s both;
-    flex-wrap: wrap;
-  }
-  
-  /* Fade In Animation */
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-  
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-  
-    .hero h2 {
-      font-size: 1.2rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  
-    .hero-image::before {
-      width: 250px;
-      height: 250px;
-      top: -10px;
-      left: -10px;
-    }
-  
-    .hero-image img {
-      max-width: 300px;
-    }
-  }
-  
+}
 
 .cta-buttons {
     display: flex;
