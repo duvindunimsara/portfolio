@@ -186,6 +186,7 @@
     flex-wrap: wrap;
   }
   
+  
   .hero-image {
     position: relative;
     display: inline-block;
@@ -218,8 +219,8 @@
     width: clamp(250px, 50vw, 500px);
     height: auto;
     max-width: 100%;
-    max-height: clamp(250px, 70vh, 700px);
-    object-fit: cover;
+    max-height: 90vh; /* change from clamp to a bigger fixed max height */
+    object-fit: cover; 
     z-index: 2;
     position: relative;
     animation: imageEntrance 2.5s ease forwards, imageFloat 6s ease-in-out infinite;
